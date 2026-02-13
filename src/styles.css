@@ -1,0 +1,141 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  background: linear-gradient(to top, #fce4ec, #f8bbd0);
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to top, #c8e6c9 0%, #fce4ec 70%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+h1 {
+  color: #d81b60;
+  font-size: 3rem;
+}
+
+.buttons {
+  margin-top: 40px; /* more top margin */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 80px; /* space between Yes and No */
+}
+
+
+button {
+  padding: 20px 40px;
+  font-size: 2rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+
+
+.yes {
+  background-color: #f48fb1;
+  color: white;
+  transform: scale(1.1);
+}
+
+.yes:hover {
+  transform: scale(1.2);
+}
+
+
+.no {
+  background-color: #b2dfdb;
+  color: #004d40;
+  position: relative;
+}
+
+.love-message {
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+}
+
+.butterfly {
+  position: absolute;
+  top: -50px;
+  font-size: 24px;
+  animation: float linear infinite;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+/* Apply custom cursor globally */
+* {
+  cursor: url('/miffy2.png') 16 16, auto !important;
+}
+
+.inline-icon {
+  width: 40px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.button-icon {
+  width: 40px;   /* increase from 20px */
+  height: auto;
+}
+
+.fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 999;
+}
+
+.firework {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: explode 1.2s ease-out forwards;
+}
+
+.firework:nth-child(3n) { background: #ff0055; }
+.firework:nth-child(4n) { background: #ffc400; }
+.firework:nth-child(5n) { background: #00e1ff; }
+
+@keyframes explode {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0);
+  }
+  60% {
+    transform: translate(var(--dx), var(--dy)) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0);
+  }
+}
+
+
+/* 
+.miffy {
+  width: 120px;
+  position: absolute;
+  pointer-events: none;
+  transition: 0.1s linear;
+} */
